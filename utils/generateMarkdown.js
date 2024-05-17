@@ -1,10 +1,42 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  const licenseWithDashes = license.replace(/\s+/g, "_");
+  return `![${license}](https://img.shields.io/badge/${licenseWithDashes}-84CC16)`;
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case "Apache License 2.0":
+      return "https://www.apache.org/licenses/LICENSE-2.0";
+    case "GNU General Public License v3.0":
+      return "https://opensource.org/license/gpl-3-0";
+    case "MIT License":
+      return "https://opensource.org/license/mit";
+    case 'BSD 2-Clause "Simplified" License':
+      return "https://opensource.org/license/bsd-2-clause";
+    case 'BSD 3-Clause "New" or "Revised" License':
+      return "https://opensource.org/license/bsd-3-clause";
+    case "Boost Software License 1.0":
+      return "https://opensource.org/license/bsl-1-0";
+    case "Creative Commons Zero v1.0 Universal License":
+      return "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en";
+    case "Eclipse Public License 2.0":
+      return "https://opensource.org/license/epl-2-0";
+    case "GNU Affero General Public License v3.0":
+      return "https://opensource.org/license/agpl-v3";
+    case "GNU General Public License v2.0":
+      return "https://opensource.org/license/gpl-2-0";
+    case "GNU Lesser General Public License v2.1":
+      return "https://opensource.org/license/lgpl-2-1";
+    case "Mozilla Public License 2.0":
+      return "https://opensource.org/license/mpl-2-0";
+    case "The Unlicense License":
+      return "https://opensource.org/license/unlicense";
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -61,3 +93,9 @@ Email: ${data.email}
 }
 
 export { generateMarkdown };
+
+// Resources
+//https://www.shecodes.io/athena/10237-how-to-replace-spaces-with-dashes-in-a-javascript-string#:~:text=replace()%20method%20with%20the,whitespace%20character%20with%20a%20dash.
+//https://shields.io/badges
+//https://opensource.org
+// https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
