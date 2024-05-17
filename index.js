@@ -1,5 +1,6 @@
 // TODO: Include packages needed for this application
 import inquirer from "inquirer";
+import { generateMarkdown } from "./utils/generateMarkdown";
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -57,14 +58,22 @@ const questions = [
       'BSD 2-Clause "Simplified" License',
       'BSD 3-Clause "New" or "Revised" License',
       "Boost Software License 1.0",
-      "Creative Commons Zero v1.0 Universal",
+      "Creative Commons Zero v1.0 Universal License",
       "Eclipse Public License 2.0",
       "GNU Affero General Public License v3.0",
       "GNU General Public License v2.0",
       "GNU Lesser General Public License v2.1",
       "Mozilla Public License 2.0",
-      "The Unlicense",
+      "The Unlicense License",
     ],
+  },
+  {
+    // Questions
+    type: "input",
+    name: "questions",
+    message:
+      "How do you want user's to ask you questions via GitHub and email?",
+    validate: isNotEmpty,
   },
   {
     // GitHub username
@@ -99,6 +108,7 @@ function writeToFile(fileName, data) {}
 function init() {
   inquirer.prompt(questions).then((answers) => {
     console.log(answers);
+    generateMarkdown(answers);
   });
 }
 
