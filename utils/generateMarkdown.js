@@ -1,13 +1,17 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  // Replaces the blank spaces of the license name with dashes
+  // So that the badge is rendered correctly
   const licenseWithDashes = license.replace(/\s+/g, "_");
-  return `![${license}](https://img.shields.io/badge/${licenseWithDashes}-84CC16)`;
+  // Returns the badge in markdown format
+  return `![${license}](https://img.shields.io/badge/${licenseWithDashes}-16A34A)`;
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  // Checks which license was chosen and returns its link
   switch (license) {
     case "Apache License 2.0":
       return "https://www.apache.org/licenses/LICENSE-2.0";
@@ -38,15 +42,12 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   // Returns the generated markdown file
   return `
-# ${data.title}
+# ${data.title} 
+${renderLicenseBadge(data.license)}
 
 ## Description
 
@@ -69,6 +70,14 @@ ${data.installation}
 
 ${data.usage}
 
+## License
+
+${data.title} is under the ${
+    data.license
+  }, to see the details of the license click the following link: ${renderLicenseLink(
+    data.license
+  )}
+
 ## How to Contribute
 
 ${data.contributing}
@@ -77,17 +86,13 @@ ${data.contributing}
 
 ${data.testing}
 
-## License
-
-${data.title} is under the ${data.license}
-
-#Questions
+## Questions
 
 ${data.questions}
 
 Contact information:
-GitHub: https://github.com/${data.username}
-Email: ${data.email}
+- GitHub: https://github.com/${data.username}
+- Email: ${data.email}
   
 `;
 }
