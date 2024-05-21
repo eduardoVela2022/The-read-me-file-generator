@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Renders a badge with the license name
 function renderLicenseBadge(license) {
   // Replaces the blank spaces of the license name with dashes
   // So that the badge is rendered correctly
@@ -8,8 +7,7 @@ function renderLicenseBadge(license) {
   return `![${license}](https://img.shields.io/badge/${licenseWithDashes}-16A34A)`;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Renders the link were the user can obtain more information about the chosen license
 function renderLicenseLink(license) {
   // Checks which license was chosen and returns its link
   switch (license) {
@@ -42,7 +40,7 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// Generates a readme.md file with the given data with a template literal
 function generateMarkdown(data) {
   // Returns the generated markdown file
   return `
@@ -97,10 +95,5 @@ Contact information:
 `;
 }
 
+// Exports
 export { generateMarkdown };
-
-// Resources
-//https://www.shecodes.io/athena/10237-how-to-replace-spaces-with-dashes-in-a-javascript-string#:~:text=replace()%20method%20with%20the,whitespace%20character%20with%20a%20dash.
-//https://shields.io/badges
-//https://opensource.org
-// https://creativecommons.org/publicdomain/zero/1.0/legalcode.en

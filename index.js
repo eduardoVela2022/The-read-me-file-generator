@@ -1,9 +1,11 @@
-// TODO: Include packages needed for this application
+// Node packages
 import inquirer from "inquirer";
 import fs from "fs";
+
+// Imports
 import { generateMarkdown } from "./utils/generateMarkdown.js";
 
-// TODO: Create an array of questions for user input
+// Questions to obtain the information of the generated readme.md file
 const questions = [
   {
     // Title
@@ -92,6 +94,7 @@ const questions = [
   },
 ];
 
+// Checks if a string is empty or not
 function isNotEmpty(value) {
   // If the value is empty, log an error message to the console
   if (value === "") {
@@ -102,7 +105,7 @@ function isNotEmpty(value) {
   return true;
 }
 
-// TODO: Create a function to write README file
+// Writes data to a file
 function writeToFile(fileName, data) {
   // Creates a file with the given file name and data
   // If there is an error, it is logged into the console
@@ -113,7 +116,7 @@ function writeToFile(fileName, data) {
   });
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
   // Questions are asked to the user to get the information he or she wants the readme.md file to have
   inquirer.prompt(questions).then((answers) => {
