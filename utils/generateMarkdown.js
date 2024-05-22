@@ -2,7 +2,8 @@
 function renderLicenseBadge(license) {
   // Replaces the blank spaces of the license name with dashes
   // So that the badge is rendered correctly
-  const licenseWithDashes = license.replace(/\s+/g, "_");
+  const licenseWithDashes = license.replace(/\s+/g, "_").replace("-", "_");
+  console.log(licenseWithDashes);
   // Returns the badge in markdown format
   return `![${license}](https://img.shields.io/badge/${licenseWithDashes}-16A34A)`;
 }
