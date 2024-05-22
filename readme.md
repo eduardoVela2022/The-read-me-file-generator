@@ -32,7 +32,7 @@ The reason I built this project was to understand how to use npm to install thir
 
 ## Usage
 
-To learn how to use this project, you can click on the following link to see a walkthrough video that explains how to use it:
+To learn how to use this project, you can click on the following link to see a walkthrough video that explains how to use it: https://drive.google.com/file/d/1vMKk8cRP7NDm35JFO49EiZc0cYK0S5Br/view?usp=sharing
 
 ## Credits
 
